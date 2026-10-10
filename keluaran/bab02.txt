@@ -11,18 +11,18 @@
     mu = (0.25, 0.5, 0.75)
       strategi        regret T=1000   lengan terbaik (t>900)
       greedy                160.67           50.5 %
-      eps = 0,1              34.71           93.4 %
-      eps = 0,01             67.21           89.9 %
+      eps = 0,1              34.75           93.4 %
+      eps = 0,01             67.62           89.7 %
       optimis Q0=1           17.07           98.4 %
-      UCB1                   42.50           94.2 %
+      UCB1                   42.46           94.2 %
       Thompson               10.47           99.4 %
     mu = (0.45, 0.5, 0.55)
       strategi        regret T=1000   lengan terbaik (t>900)
       greedy                 45.66           37.4 %
-      eps = 0,1              23.55           73.9 %
-      eps = 0,01             34.46           57.5 %
+      eps = 0,1              23.55           73.5 %
+      eps = 0,01             34.68           57.4 %
       optimis Q0=1           29.28           60.2 %
-      UCB1                   34.77           56.7 %
+      UCB1                   34.69           57.1 %
       Thompson               21.86           78.8 %
 
 === blok 3 ===
@@ -33,5 +33,5 @@
 === blok 4 ===
 (4) Kebijakan lorong sebagai lengan, T = 2000, R = 500:
     strategi     regret (satuan return)   memilih -++ (t>1900)
-    eps = 0,1            149.36              63.4 %
-    UCB1                 138.72              57.6 %
+    eps = 0,1            148.89              63.6 %
+    UCB1                 138.74              57.6 %

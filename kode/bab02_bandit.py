@@ -27,8 +27,10 @@ def rata_inkremental(imbalan, alpha=None, q0=0.0):
 
 
 def argmax_acak(Q, rng):
-    """argmax per baris; nilai yang seri dipilih secara acak."""
-    Q = np.atleast_2d(Q)
+    """argmax per baris; nilai yang seri dipilih secara acak. Skor
+    dibulatkan ke 10 desimal agar seri tidak bergantung pada galat
+    pembulatan CPU."""
+    Q = np.round(np.atleast_2d(Q), 10)
     maks = Q.max(axis=1, keepdims=True)
     acak = rng.random(Q.shape) * (Q == maks)
     return acak.argmax(axis=1)
