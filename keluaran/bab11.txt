@@ -1,0 +1,28 @@
+# Blok keluaran yang tercetak di Bab 11 (bab11-linear.tex).
+# Diperiksa oleh periksa.py terhadap kode/bab11_*.py.
+
+=== blok 1 ===
+(1) Lorong, kebijakan acak, x(s) = (1, s - 2), 20 000 episode
+    alpha = 0.01, w dirata-ratakan atas episode 10 001..20 000
+    gradien MC   w = [2.1347 1.4989]  (teori 2.1429, 1.5)
+    semi-grad TD w = [2.0204 1.5007]  (teori 2, 1.5)
+    LSTD         w = [1.9951 1.495 ]
+
+=== blok 2 ===
+(2) Jalan acak 1000 petak: akar VE sesudah 2000 episode
+    fitur          d  gradien MC     semi-grad TD     LSTD
+                       alpha  VE^.5  alpha  VE^.5
+    agregasi 10   10  3e-04 0.1179  1e-01 0.0843   0.1181
+    polinomial 5   6  1e-04 0.1982  1e-02 0.0834   0.0082
+    Fourier 5      6  3e-05 0.1426  3e-03 0.0161   0.0118
+    min VE^.5 agregasi 10   = 0.0544
+    min VE^.5 polinomial 5  = 0.0010
+    min VE^.5 Fourier 5     = 0.0079
+
+=== blok 3 ===
+(3) Contoh Baird: norma w, semi-gradien TD off-policy
+    sapuan    0: ||w|| = 10.34
+    sapuan   10: ||w|| = 10.61
+    sapuan  100: ||w|| = 16.83
+    sapuan  500: ||w|| = 101.2
+    sapuan 1000: ||w|| = 436.9

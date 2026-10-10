@@ -1,0 +1,32 @@
+# Blok keluaran yang tercetak di Bab 13 (bab13-reinforce.tex).
+# Diperiksa oleh periksa.py terhadap kode/bab13_*.py.
+
+=== blok 1 ===
+(1) Gradien J di theta = 0 (kebijakan acak):
+    eta (kunjungan berdiskon) = [0.2857 1.1429 0.2857]
+    teorema: dJ/dtheta(s, kiri)  = [ 0.0918 -0.2143 -0.5204]
+             dJ/dtheta(s, kanan) = [-0.0918  0.2143  0.5204]
+    selisih maks dengan beda hingga = 2.5e-10
+
+=== blok 2 ===
+(2) Taksiran REINFORCE di theta = 0, 100 000 episode
+    komponen kanan untuk petak 1, 2, 3
+    tanpa baseline  rata = [-0.0923  0.2159  0.5193]
+                    var  = [0.0725 1.0829 0.7453]
+    baseline V      rata = [-0.0915  0.2127  0.5206]
+                    var  = [0.0177 0.5592 0.2236]
+(3) Belajar REINFORCE, alpha = 0.5, rata-rata 20 benih
+    episode   tanpa baseline   baseline (alpha_w = 0.1)
+         10           2.5266           2.6330
+         50           2.8897           3.1716
+        100           3.0684           3.2141
+        300           3.1613           3.2388
+       1000           3.2424           3.2466
+    J(theta*) = V*(2) = 3.25
+
+=== blok 3 ===
+(4) REINFORCE pada CartPole, 1000 episode, 3 benih
+    panjang episode rata-rata per blok 100 episode
+    varian       1-100  401-500  901-1000   per benih (akhir)
+    tanpa          50.8    265.8    188.9     121   210   236
+    baseline       51.8    416.5    450.7     465   499   388

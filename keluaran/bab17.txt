@@ -1,0 +1,24 @@
+# Blok keluaran yang tercetak di Bab 17 (bab17-rlhf.tex).
+# Diperiksa oleh periksa.py terhadap kode/bab17_*.py.
+
+=== blok 1 ===
+(1) Model imbalan Bradley-Terry dari 1000 pasangan
+    bobot (a, b, c) = [ 0.3952 -0.2052 -0.19  ]
+    E_ref[r benar] = 0.6875
+(2) RLHF (optimum KL dengan r_hat) lawan DPO, data yang sama
+    beta   metode   KL     r_hat   r benar
+    2.00   RLHF    0.03  -0.047    0.811
+    2.00   DPO     0.08  -0.026    0.941
+    1.00   RLHF    0.12   0.073    0.916
+    1.00   DPO     0.34   0.131    1.220
+    0.50   RLHF    0.51   0.334    0.997
+    0.50   DPO     1.32   0.411    1.698
+    0.25   RLHF    1.87   0.798    0.430
+    0.25   DPO     2.55   0.571    1.969
+    0.10   RLHF    4.00   1.172   -0.931
+    0.10   DPO     2.64   0.578    1.987
+    0.05   RLHF    4.16   1.186   -1.000
+    0.05   DPO     1.98   0.536    1.917
+    0.25   r*      1.69       -    1.946
+    0.05   r*      1.96       -    2.000
+    RLHF beta 0.05: P(aaa) = 1.000

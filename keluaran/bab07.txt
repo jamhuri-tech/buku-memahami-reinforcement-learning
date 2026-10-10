@@ -1,0 +1,29 @@
+# Blok keluaran yang tercetak di Bab 7 (bab07-td.tex).
+# Diperiksa oleh periksa.py terhadap kode/bab07_*.py.
+
+=== blok 1 ===
+(1) TD(0) pada tiga episode mini, alpha = 1/2, V0 = 0:
+    E1: galat TD = [0.0, 8.0]  V(1..3) = [0. 0. 4.]
+    E2: galat TD = [0.0, 0.0, 2.0, 4.0]  V(1..3) = [0. 1. 6.]
+    E3: galat TD = [-1.0, 2.0]  V(1..3) = [1.  0.5 6. ]
+
+=== blok 2 ===
+(2) Data tetap tiga episode, diulang sampai konvergen:
+    batch MC every-visit = [2.  2.5 8. ]
+    batch TD(0)          = [1.6 2.4 8. ]
+    nilai sebenarnya     = [1.3571 1.4286 4.3571]
+
+=== blok 3 ===
+(3) Varians sasaran di petak 2 (V benar), 200 000 sampel:
+    sasaran TD: rata 1.4285, var 0.5625
+    sasaran MC: rata 1.4289, var 2.3462
+
+=== blok 4 ===
+(4) RMSE V(1..3), kebijakan acak, rata-rata 100 ulangan:
+    metode  alpha   ep 10   ep 30  ep 100
+    TD      0.05  1.8061  0.8129  0.2796
+    TD      0.10  1.1656  0.4400  0.4108
+    TD      0.20  0.6300  0.6429  0.5908
+    MC      0.05  1.6091  0.6363  0.3045
+    MC      0.10  0.9735  0.4978  0.4283
+    MC      0.20  0.6381  0.7216  0.6115

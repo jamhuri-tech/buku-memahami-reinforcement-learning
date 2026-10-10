@@ -1,0 +1,39 @@
+# Blok keluaran yang tercetak di Bab 6 (bab06-mc.tex).
+# Diperiksa oleh periksa.py terhadap kode/bab06_*.py.
+
+=== blok 1 ===
+(1) Tiga episode mini, gamma = 1/2:
+    first-visit: V = [2. 2. 8.], n = [2. 3. 2.]
+    every-visit: V = [2.  2.5 8. ], n = [2. 4. 2.]
+
+=== blok 2 ===
+(2) Taksiran V(2) kebijakan acak (eksak 1.4286), 2000 ulangan:
+     n   bias first  RMSE first  bias every  RMSE every
+      1      0.0244      1.5447      0.4488      1.4576
+      3      0.0079      0.8956      0.2051      0.7957
+     10      0.0116      0.4830      0.0703      0.4104
+     30      0.0040      0.2806      0.0237      0.2252
+    100      0.0003      0.1552      0.0072      0.1232
+
+=== blok 3 ===
+(3) MC kontrol eps-greedy (eps = 0.1), lorong, 5000 episode:
+    Q(s, kiri)  = [2.     1.8529 1.4669]
+    Q(s, kanan) = [1.5446 3.1155 8.    ]
+    kebijakan greedy: -++
+
+=== blok 4 ===
+(5) MC kontrol pada grid es, gamma = 0.99, eps = 0.05:
+    V(awal) kebijakan greedy; optimal = 0.5938
+    episode    Q0 = 0    Q0 = 1
+       1000    0.0002    0.3771
+       5000    0.0002    0.4402
+
+=== blok 5 ===
+(4) Off-policy: sasaran -++ (V(2) = 3.25), perilaku acak
+    episode mini, IS biasa: 5.3333
+    episode mini, IS berbobot: 4.0000
+      n   rata IS biasa  RMSE   rata berbobot  RMSE
+      10      3.2522  1.9897      3.0434  1.1729
+     100      3.2487  0.6248      3.2495  0.2724
+    1000      3.2462  0.1980      3.2490  0.0839
+    bagian episode dengan rho > 0 = 0.2498, var(rho G) = 38.40

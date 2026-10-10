@@ -1,0 +1,27 @@
+# Blok keluaran yang tercetak di Bab 18 (bab18-riset.tex).
+# Diperiksa oleh periksa.py terhadap kode/bab18_*.py.
+
+=== blok 1 ===
+(1) Lima benih: return akhir [120, 300, 480, 500, 500]
+    rata 380.0, median 480.0, IQM 426.7
+    selang bootstrap 95 % rata-rata: [232.0, 496.0]
+
+=== blok 2 ===
+(2) REINFORCE lorong, episode 50, 40 benih per metode
+    tanpa baseline rata 2.9303, sd 0.5606, CI [2.746, 3.083]
+    baseline       rata 3.1613, sd 0.0682, CI [3.139, 3.181]
+    benih dengan J < 2: tanpa baseline 7, baseline 0
+    median: tanpa baseline 3.2049, baseline 3.1748
+    uji permutasi 40 lawan 40: p = 0.0129
+    3 lawan 3 benih: urutan terbalik 38.4 %
+    benih per metode untuk kuasa 80 %: 46.9
+
+=== blok 3 ===
+(3) Hasil akhir buku ini per benih (3 benih)
+    percobaan                rata    IQM   CI rata-rata 95 %
+    DQN lengkap, 60k        414.3  414.3  [  242.8,   500.0]
+    A2C lambda 0            500.0  500.0  [  500.0,   500.0]
+    A2C lambda 0.95         224.2  224.2  [   69.1,   500.0]
+    PPO agresif clip        500.0  500.0  [  500.0,   500.0]
+    SAC Pendulum           -224.2 -224.2  [ -253.1,  -194.3]
+    TD3 Pendulum           -205.1 -205.1  [ -228.4,  -179.6]

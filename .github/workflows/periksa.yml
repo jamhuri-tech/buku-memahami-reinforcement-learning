@@ -1,0 +1,25 @@
+# Setiap perubahan kode memeriksa (1) semua hitungan tangan Contoh Soal
+# dan (2) blok keluaran Bab 1-11, 17, dan 18, yang hanya memakai NumPy.
+# Bab 12-16 mencetak ringkasan pelatihan PyTorch dari berkas data/*.npz;
+# pelatihan ulangnya dijalankan di komputer sendiri (lihat README).
+name: periksa
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  periksa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+      - run: pip install torch==2.2.2 --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install numpy==1.26.4 scipy==1.13.1 sympy==1.14.0 matplotlib==3.9.4
+      - name: Contoh Soal semua bab
+        run: for f in kode/bab*_contoh.py; do echo "== $f"; python "$f" || exit 1; done
+      - name: Keluaran semua bab
+        run: python periksa.py

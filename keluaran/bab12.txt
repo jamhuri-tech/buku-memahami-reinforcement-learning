@@ -1,0 +1,31 @@
+# Blok keluaran yang tercetak di Bab 12 (bab12-dqn.tex).
+# Diperiksa oleh periksa.py terhadap kode/bab12_*.py.
+
+=== blok 1 ===
+(1) Minibatch tiga transisi, gamma = 0.9:
+    sasaran DQN        y = [3.7 1.9 1. ]
+    sasaran double DQN y = [2.8  1.45 1.  ]
+    galat q - y (DQN)    = [-1.2 -0.7 -0.6]
+    loss kuadrat rata-rata = 0.7633, loss Huber = 0.3750
+    dL_Huber/dq          = [-0.3333 -0.2333 -0.2   ]
+    PyTorch: loss = 0.3750, grad = [-0.3333 -0.2333 -0.2   ]
+(2) Dueling: V = 2, A = (1, -1, 0.5)
+    Q = [2.8333 0.8333 2.3333]
+
+=== blok 2 ===
+(3) Satu langkah CartPole dari s = (0, 0, 0.05, 0):
+    aksi 0: x'' =  -9.7901, theta'' =  15.4015
+            s' = [ 0.      -0.1958   0.05     0.30803]
+    aksi 1: x'' =   9.7185, theta'' = -13.8249
+            s' = [ 0.       0.19437  0.05    -0.2765 ]
+    kebijakan acak, 1000 episode: panjang rata-rata 22.17,
+    terpanjang 115
+
+=== blok 3 ===
+(4) CartPole, 60 000 langkah, 3 benih (return maks 500)
+    return greedy rata-rata 10 episode, rata-rata 3 benih
+    varian          20k    30k    40k    50k    60k  episode
+    DQN lengkap      138    192    500    454    414      427
+    double DQN       134    254    358    482    336      473
+    tanpa target       9      9      9     10      9     5908
+    tanpa replay     172    225    328    276    361      427

@@ -1,0 +1,17 @@
+# Blok keluaran yang tercetak di Bab 10 (bab10-perencanaan.tex).
+# Diperiksa oleh periksa.py terhadap kode/bab10_*.py.
+
+=== blok 1 ===
+(1) Labirin 6 x 9: langkah per episode, rata-rata 30 ulangan
+    rencana n   ep 1    ep 2    ep 5   ep 10   ep 50
+            0   445.8   383.3   323.0   177.9    15.2
+            5   339.0   160.0    19.5    15.2    15.1
+           50   598.0    41.8    15.4    15.5    16.1
+
+=== blok 2 ===
+(2) UCT dari petak 2, gamma = 1/2 (Q* = 1.75 kiri, 3.25 kanan)
+    simulasi   Q(kiri)  Q(kanan)  N(kiri)  N(kanan)
+          10    0.8008    1.8531        5         5
+         100    0.8008    3.1640        5        95
+        1000    0.8008    3.1911        5       995
+       10000    0.7090    3.2525        6      9994

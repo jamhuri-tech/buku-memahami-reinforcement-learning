@@ -1,0 +1,27 @@
+# Blok keluaran yang tercetak di Bab 14 (bab14-aktorkritik.tex).
+# Diperiksa oleh periksa.py terhadap kode/bab14_*.py.
+
+=== blok 1 ===
+(1) Episode E2 dengan V = V^pi acak, gamma = 1/2:
+    galat TD = [-0.75   -0.6429  0.75    3.6429]
+    GAE lambda = 0.0: [-0.75   -0.6429  0.75    3.6429]
+    GAE lambda = 0.5: [-0.8069 -0.2277  1.6607  3.6429]
+    GAE lambda = 1.0: [-0.4286  0.6429  2.5714  3.6429]
+    G_0 - V(2) = -0.4286
+    entropi (1/2, 1/2) = 0.6931, (0.9, 0.1) = 0.3251
+(2) Lorong: J(theta), rata-rata 20 benih, alpha = 0.5
+    episode   REINFORCE+baseline   aktor-kritik
+         10               2.6330         2.4472
+         50               3.1716         3.1774
+        100               3.2141         3.2092
+        300               3.2388         3.2421
+       1000               3.2466         3.2466
+
+=== blok 2 ===
+(3) A2C pada CartPole, N = 8, n = 16, 300 000 langkah, 3 benih
+    return episode rata-rata per blok langkah (ribu)
+    varian          0-60  60-120 180-240 240-300  akhir/benih
+    lambda = 0         30     94     500     500  500 500 500
+    lambda = 0.95     135    191     257     244  500 104  69
+    lambda = 1        149    221     343     357  500 500   9
+    berbagi, 0.95      41    102     139     143  154 153 144
